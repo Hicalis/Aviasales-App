@@ -1,8 +1,8 @@
-import { configureStore } from '@reduxjs/toolkit'
+import { configureStore } from '@reduxjs/toolkit';
 
-import sortSlice from './SortReducer'
-import filterSlice from './FilterReducer'
-import ticketSlice from './TicketReducer'
+import sortSlice from './SortReducer';
+import filterSlice from './FilterReducer';
+import ticketSlice from './TicketReducer';
 
 export const store = configureStore({
   reducer: {
@@ -10,4 +10,4 @@ export const store = configureStore({
     filter: filterSlice,
     getTickets: ticketSlice,
   },
-})
+});

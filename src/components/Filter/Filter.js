@@ -1,18 +1,24 @@
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux';
 
-import { filterAll, filterWithout, filterOne, filterTwo, filterThree } from '../store/FilterReducer'
+import {
+  filterAll,
+  filterWithout,
+  filterOne,
+  filterTwo,
+  filterThree,
+} from '../store/FilterReducer';
 
-import classes from './Filter.module.scss'
-import { Checkbox } from 'antd'
+import classes from './Filter.module.scss';
+import { Checkbox } from 'antd';
 
 function Filter() {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
-  const isAll = useSelector((state) => state.filter.isAll)
-  const isWithout = useSelector((state) => state.filter.isWithout)
-  const isOne = useSelector((state) => state.filter.isOne)
-  const isTwo = useSelector((state) => state.filter.isTwo)
-  const isThree = useSelector((state) => state.filter.isThree)
+  const isAll = useSelector((state) => state.filter.isAll);
+  const isWithout = useSelector((state) => state.filter.isWithout);
+  const isOne = useSelector((state) => state.filter.isOne);
+  const isTwo = useSelector((state) => state.filter.isTwo);
+  const isThree = useSelector((state) => state.filter.isThree);
 
   return (
     <div className={classes.filter}>
@@ -22,7 +28,7 @@ function Filter() {
           <Checkbox
             checked={isAll}
             onChange={() => {
-              dispatch(filterAll())
+              dispatch(filterAll());
             }}
           />
           <h2>Все</h2>
@@ -33,7 +39,7 @@ function Filter() {
           <Checkbox
             checked={isWithout}
             onChange={() => {
-              dispatch(filterWithout())
+              dispatch(filterWithout());
             }}
           />
           <h2>Без пересадок</h2>
@@ -44,7 +50,7 @@ function Filter() {
           <Checkbox
             checked={isOne}
             onChange={() => {
-              dispatch(filterOne())
+              dispatch(filterOne());
             }}
           />
           <h2>1 пересадка</h2>
@@ -55,7 +61,7 @@ function Filter() {
           <Checkbox
             checked={isTwo}
             onChange={() => {
-              dispatch(filterTwo())
+              dispatch(filterTwo());
             }}
           />
           <h2>2 пересадки</h2>
@@ -66,13 +72,13 @@ function Filter() {
           <Checkbox
             checked={isThree}
             onChange={() => {
-              dispatch(filterThree())
+              dispatch(filterThree());
             }}
           />
           <h2>3 пересадки</h2>
         </label>
       </div>
     </div>
-  )
+  );
 }
-export default Filter
+export default Filter;
